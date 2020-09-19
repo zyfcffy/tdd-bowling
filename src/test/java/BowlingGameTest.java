@@ -47,4 +47,13 @@ public class BowlingGameTest {
         int score = bowlingGame.getScore(test);
         assertEquals(106, score);
     }
+
+
+    @Test
+    void should_return_score_when_not_strike_and_not_spare()throws Exception {
+        BowlingGame bowlingGame = new BowlingGame();
+        int[] test = {5, 3, 3, 6, 4, 5, 7, 2, 5, 4, 4, 5, 6, 3, 8, 1, 4, 5, 4, 5};
+        int score = bowlingGame.getScore(test);
+        assertEquals(89, score);
+    }
 }
