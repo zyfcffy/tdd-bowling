@@ -12,4 +12,13 @@ public class BowlingGameTest {
             int score = bowlingGame.getScore(test);
         });
     }
+
+    @Test
+    void should_throw_exception_when_round_not_enough(){
+        assertThrows(Exception.class, () -> {
+            BowlingGame bowlingGame = new BowlingGame();
+            int[] test = { 7, 3, 5, 6, 1, 5, 3, 4, 2, 11, 1};
+            int score = bowlingGame.getScore(test);
+        });
+    }
 }
