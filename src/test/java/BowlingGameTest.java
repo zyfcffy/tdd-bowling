@@ -41,6 +41,14 @@ public class BowlingGameTest {
     }
 
     @Test
+    void should_return_score_when_all_round_is_strike() throws Exception {
+        BowlingGame bowlingGame = new BowlingGame();
+        int[] test = {10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10};
+        int score = bowlingGame.getScore(test);
+        assertEquals(300, score);
+    }
+
+    @Test
     void should_return_score_when_spare_in_one_round() throws Exception {
         BowlingGame bowlingGame = new BowlingGame();
         int[] test = {5, 5, 3, 7, 4, 6, 7, 3, 5, 5, 4, 5, 6, 3, 9, 1, 4, 5, 4, 6, 9};
