@@ -5,12 +5,20 @@ public class BowlingGame {
             if (score[i] > 10 || score[i] < 0) {
                 throw new Exception("分数不符合规定");
             }
-            if (score.length < 12  ) {
+            if (score.length < 12) {
                 throw new Exception("输入的分数不能完成10轮");
             }
-            if(score.length > 21){
+            if (score.length > 21) {
                 throw new Exception("输入的分数超过10轮");
             }
+            int oneScore = 0;
+            if (score[i] == 10 && i < score.length - 2) {
+                oneScore = 10 + score[i + 1] + score[i + 2];
+                if (i == score.length - 3) {
+                    i += 2;
+                }
+            }
+            scores += oneScore;
         }
         return scores;
     }
